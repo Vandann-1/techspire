@@ -1,0 +1,90 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechSpire | Our Projects</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50 dark:bg-gray-900">
+    <!-- Header with Back Button -->
+    <header class="w-full py-4 bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 text-white shadow-lg fixed top-0 z-50">
+        <div class="max-w-6xl mx-auto flex justify-between items-center px-6">
+            <a href="/" class="flex items-center gap-2 hover:text-yellow-300 transition">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                </svg>
+                Back to Home
+            </a>
+            <h1 class="text-2xl font-bold">Our Projects</h1>
+        </div>
+    </header>
+
+    <main class="pt-24 px-4 md:px-6 max-w-7xl mx-auto">
+        <!-- Projects Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 py-8">
+            <!-- Project Card 1 -->
+            <div class="group bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                <div class="relative h-48 md:h-64">
+                    <img src="https://via.placeholder.com/600x400" alt="Project 1" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <a href="#" class="bg-white text-gray-900 px-6 py-2 rounded-lg font-medium hover:bg-yellow-300 transition">View Project</a>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-2">E-Commerce Platform</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">A full-stack e-commerce solution with modern UI/UX and secure payment integration.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm">React</span>
+                        <span class="px-3 py-1 bg-green-100 text-green-600 rounded-full text-sm">Node.js</span>
+                        <span class="px-3 py-1 bg-purple-100 text-purple-600 rounded-full text-sm">MongoDB</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project Card 2 -->
+            <div class="group bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                <div class="relative h-48 md:h-64">
+                    <img src="https://via.placeholder.com/600x400" alt="Project 2" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <a href="#" class="bg-white text-gray-900 px-6 py-2 rounded-lg font-medium hover:bg-yellow-300 transition">View Project</a>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-2">AI Task Manager</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">Smart task management system with AI-powered prioritization and insights.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm">Python</span>
+                        <span class="px-3 py-1 bg-red-100 text-red-600 rounded-full text-sm">TensorFlow</span>
+                        <span class="px-3 py-1 bg-yellow-100 text-yellow-600 rounded-full text-sm">Flask</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project Card 3 -->
+            <div class="group bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                <div class="relative h-48 md:h-64">
+                    <img src="https://via.placeholder.com/600x400" alt="Project 3" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <a href="#" class="bg-white text-gray-900 px-6 py-2 rounded-lg font-medium hover:bg-yellow-300 transition">View Project</a>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-2">Social Media Dashboard</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">Centralized platform for managing multiple social media accounts with analytics.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm">Vue.js</span>
+                        <span class="px-3 py-1 bg-green-100 text-green-600 rounded-full text-sm">Django</span>
+                        <span class="px-3 py-1 bg-orange-100 text-orange-600 rounded-full text-sm">PostgreSQL</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="text-center py-6 text-sm text-gray-500 dark:text-gray-400">
+        © 2025 TechSpire. All rights reserved.
+    </footer>
+</body>
+</html>
