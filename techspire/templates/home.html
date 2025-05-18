@@ -70,7 +70,7 @@
         <p class="text-gray-600 dark:text-gray-400 text-sm">
           Organized for easy browsing, with dedicated pages, descriptions, and links for each project.
         </p>
-        <a href="/projects" class="inline-block bg-black text-white px-6 py-3 rounded-lg font-medium hover:bg-gray-800 transition duration-300">
+        <a href="{% url 'projectsho' %}" class="inline-block bg-black text-white px-6 py-3 rounded-lg font-medium hover:bg-gray-800 transition duration-300">
           View All Projects
         </a>
       </div>
@@ -120,14 +120,66 @@
   </section>
 
   <!-- About -->
-  <section id="about" class="py-16 px-4 text-center">
-    <div class="max-w-4xl mx-auto">
-      <h2 class="text-2xl sm:text-3xl font-bold mb-6">About TechSpire</h2>
-      <p class="text-lg leading-relaxed">
-        At TechSpire, we believe in transforming ideas into scalable solutions. Our mission is to innovate with purpose and craft digital products that leave a lasting impact.
+
+<section id="about" class="py-16 px-4 text-center bg-gray-950 text-white">
+  <div class="max-w-4xl mx-auto">
+    <h2 class="text-2xl sm:text-3xl font-bold mb-6">About TechSpire</h2>
+    <p class="text-lg leading-relaxed mb-8">
+      At TechSpire, we believe in transforming ideas into scalable solutions. Our mission is to innovate with purpose and craft digital products that leave a lasting impact.
+    </p>
+
+    <!-- Unique Button -->
+    <a href="/founders" class="inline-block px-8 py-3 rounded-full text-white font-semibold bg-gradient-to-r from-indigo-500 to-pink-500 hover:scale-105 transition-transform duration-300 shadow-lg shadow-indigo-500/30">
+      🚀 Meet Our Founders
+    </a>
+  </div>
+</section>
+
+<section id="blogs" class="py-20 bg-gray-950 text-white">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-4">📰 Our Blogs on BlogBeat</h2>
+      <p class="text-gray-400 text-lg max-w-2xl mx-auto">
+        Dive into insights, tutorials, and tech updates written by our TechSpire team — hosted on our platform <span class="text-indigo-400 font-semibold">BlogBeat</span>.
       </p>
     </div>
-  </section>
+
+    <!-- Blog Cards -->
+    <div class="grid md:grid-cols-3 gap-8">
+      
+      <!-- Blog Post 1 -->
+      <div class="bg-white/5 rounded-xl p-6 hover:scale-[1.02] transition shadow-lg">
+        <h3 class="text-xl font-semibold mb-2 text-indigo-400">🚀 How We Built BlogBeat</h3>
+        <p class="text-gray-300 mb-4 text-sm">A behind-the-scenes look into the architecture, design, and Django magic that powers our blogging platform.</p>
+        <a href="https://yourblogbeat.com/blog/1" target="_blank" class="text-indigo-300 hover:underline text-sm">Read More →</a>
+      </div>
+
+      <!-- Blog Post 2 -->
+      <div class="bg-white/5 rounded-xl p-6 hover:scale-[1.02] transition shadow-lg">
+        <h3 class="text-xl font-semibold mb-2 text-pink-400">🧠 Why Startups Should Blog</h3>
+        <p class="text-gray-300 mb-4 text-sm">Content marketing isn't optional. Learn how we use BlogBeat to share our journey and build trust.</p>
+        <a href="https://yourblogbeat.com/blog/2" target="_blank" class="text-pink-300 hover:underline text-sm">Read More →</a>
+      </div>
+
+      <!-- Blog Post 3 -->
+      <div class="bg-white/5 rounded-xl p-6 hover:scale-[1.02] transition shadow-lg">
+        <h3 class="text-xl font-semibold mb-2 text-green-400">📊 Analytics for Writers</h3>
+        <p class="text-gray-300 mb-4 text-sm">We’re building insights directly into BlogBeat — here's how we’re empowering authors with real-time feedback.</p>
+        <a href="https://yourblogbeat.com/blog/3" target="_blank" class="text-green-300 hover:underline text-sm">Read More →</a>
+      </div>
+
+    </div>
+
+    <!-- CTA -->
+    <div class="text-center mt-12">
+      <a href="https://yourblogbeat.com" target="_blank" class="inline-block px-8 py-3 bg-gradient-to-r from-indigo-500 to-pink-500 text-white rounded-full font-semibold shadow-md hover:scale-105 transition">
+        📝 Visit BlogBeat to Explore All Blogs of TechSpire
+      </a>
+    </div>
+  </div>
+</section>
+
+
 
   <!-- Contact -->
   <section id="contact" class="py-16 bg-gray-100 dark:bg-gray-800 px-4">
