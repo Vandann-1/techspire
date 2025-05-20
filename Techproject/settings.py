@@ -116,10 +116,16 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 import os
+# settings.py
+
 STATIC_URL = '/static/'
 
-# Optional (only if you've configured static root)
-STATICFILES_DIRS = [BASE_DIR / "static"]
+# Optional if you are collecting static files
+STATICFILES_DIRS = [BASE_DIR / "static"]  # If you store static files in /static folder in root
+
+# For production or collectstatic usage
+STATIC_ROOT = BASE_DIR / "staticfiles"
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
