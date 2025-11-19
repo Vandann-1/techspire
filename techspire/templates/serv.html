@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Techspire - Comprehensive Digital Services</title>
+    <!-- Load Tailwind CSS from CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom font import for a modern look */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f9fafb; 
+        }
+        /* Custom styles for tab indicators and smooth transitions */
+        .tab-button {
+            transition: all 0.3s ease-in-out;
+            padding: 0.75rem 1rem;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-grow: 1; 
+            text-align: center;
+            color: #4b5563; 
+            font-weight: 600; 
+        }
+        /* Primary Active State: Deep Navy Blue */
+        .tab-button.active {
+            background-color: #1e40af; /* Deep Navy Blue */
+            color: white;
+            box-shadow: 0 0 20px rgba(30, 64, 175, 0.6); 
+            transform: translateY(-2px); 
+        }
+        /* Hover State: Amber background for quick visual feedback */
+        .tab-button:not(.active):hover {
+            background-color: #fef3c7; /* Light Yellow/Amber hover */
+            color: #1f2937;
+        }
+        /* Sub-Navigation Custom Styles */
+        .sub-nav-item {
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            color: #4b5563;
+            font-weight: 500;
+            transition: all 0.2s;
+            cursor: pointer;
+        }
+        /* Sub-Nav Active State: Golden Amber Accent */
+        .sub-nav-item.active-sub {
+            background-color: #fef3c7; /* Light Amber background */
+            color: #f59e0b; /* Golden Amber text */
+            font-weight: 700;
+            box-shadow: 0 2px 5px rgba(245, 158, 11, 0.2);
+        }
+        /* Sub-Nav Hover */
+        .sub-nav-item:hover {
+            background-color: #fef3c7; 
+        }
+        /* Hide content sections by default */
+        .service-content-section {
+            display: none;
+            animation: fadeIn 0.6s ease-out; 
+            min-height: 70vh; 
+        }
+        /* Show the initial active content section */
+        #website-dev {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .card {
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08); 
+            background-color: white;
+            border-radius: 1.25rem; 
+            border: 1px solid #e5e7eb;
+        }
+        /* Primary Yellow Accent Color */
+        .highlight-text {
+            color: #f59e0b; /* Golden Amber */
+        }
+        /* CTA Button: Gradient shifted to Amber start, Navy end */
+        .cta-button {
+            background: linear-gradient(90deg, #f59e0b 0%, #1e40af 100%); 
+            transition: all 0.3s ease-in-out;
+            cursor: pointer;
+        }
+        .cta-button:hover {
+            box-shadow: 0 8px 25px rgba(245, 158, 11, 0.5); /* Amber glow on hover */
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body class="min-h-screen p-4 sm:p-8">
+
+    <div class="max-w-6xl mx-auto">
+        
+        <!-- Header Section - Stronger UVP & Primary CTA -->
+        <header class="text-center mb-10 p-8 card bg-white">
+            <h1 class="text-4xl sm:text-5xl font-extrabold text-gray-900 mb-4">Technology that Drives <span class="highlight-text">Measurable Growth</span>.</h1>
+            <p class="text-xl text-gray-600 mb-6">
+                We bridge your vision with best-in-class digital solutions. Explore the four pillars of Techspire's success framework.
+            </p>
+            <a href="#contact" class="cta-button inline-flex items-center text-white font-bold py-3 px-8 rounded-full text-lg shadow-lg">
+                Start Your Project Today 
+                <!-- Icon: Arrow Right -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 ml-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+        </header>
+
+        <!-- Service Navigation (Tabs) - Improved Visuals -->
+        <div class="card p-3 mb-8">
+            <nav id="service-tabs" class="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-4">
+                <button data-target="website-dev" class="tab-button active">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="2" x2="22" y1="18" y2="18"/><line x1="6" x2="6" y1="22" y2="18"/><line x1="18" x2="18" y1="22" y2="18"/></svg>
+                    Website Development
+                </button>
+                <button data-target="ui-ux-branding" class="tab-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 20-4-4 1-5 5-1 4 4-1 5z"/><path d="M17 17 3 3"/><path d="m8 12 5 5"/></svg>
+                    UI/UX & Branding
+                </button>
+                <button data-target="automation" class="tab-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                    Automation & Integrations
+                </button>
+                <button data-target="maintenance" class="tab-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                    Maintenance & Support
+                </button>
+            </nav>
+        </div>
+
+        <!-- Service Content Sections -->
+        <main class="space-y-8">
+
+            <!-- 1. Website Development Content - Expanded with Sticky Sub-Nav -->
+            <section id="website-dev" class="service-content-section card p-0 overflow-hidden">
+                <div class="flex flex-col lg:flex-row">
+                    <!-- Sticky Sub-Navigation (Left Column) -->
+                    <nav class="lg:w-1/4 bg-gray-50 p-6 space-y-2 sticky top-0 border-r border-gray-200">
+                        <h3 class="text-lg font-bold text-gray-800 mb-3">Development Focus</h3>
+                        <a href="#web-dev-1" class="sub-nav-item active-sub block" data-parent="website-dev">E-commerce Engines</a>
+                        <a href="#web-dev-2" class="sub-nav-item block" data-parent="website-dev">Business Websites</a>
+                        <a href="#web-dev-3" class="sub-nav-item block" data-parent="website-dev">Portfolio & Showcase</a>
+                        <a href="#web-dev-4" class="sub-nav-item block" data-parent="website-dev">Microsites & Campaigns</a>
+                    </nav>
+
+                    <!-- Main Content Area (Right Column) -->
+                    <div class="lg:w-3/4 p-6 sm:p-10 space-y-12">
+                        <h2 class="text-3xl font-bold text-gray-800 border-b pb-2 highlight-text">Conversion-Optimized Web Engineering</h2>
+                        <p class="text-lg text-gray-600">
+                            We engineer high-speed digital assets focused on meeting measurable business goals. Our sites aren't just built; they are architected for performance, security, and scalability.
+                        </p>
+
+                        <!-- Sub-Section 1: E-commerce -->
+                        <div id="web-dev-1" class="pt-6 border-t border-gray-100">
+                            <h3 class="font-bold text-2xl text-blue-700 mb-3 flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mr-2 highlight-text" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 12.52a2 2 0 0 0 2 1.48h10.42a2 2 0 0 0 2-1.55L23 6H6"/></svg>
+                                E-commerce Engines: Maximizing AOV
+                            </h3>
+                            <p class="text-gray-700 mb-4">
+                                We design and deploy robust online stores, specializing in solutions that handle high transaction volumes and complex logistics. Our focus is on optimizing the entire purchase funnel.
+                            </p>
+                            <ul class="space-y-2 pl-5 list-disc text-gray-600 bg-amber-50 p-4 rounded-lg">
+                                <li><strong class="text-gray-900">Headless Architecture:</strong> Separating the front-end presentation from the back-end commerce logic for blazing fast speed and multi-channel capability.</li>
+                                <li><strong class="text-gray-900">Custom Payment Integration:</strong> Secure setup of localized payment gateways, subscription billing, and compliance with PCI DSS standards.</li>
+                                <li><strong class="text-gray-900">Inventory & ERP Sync:</strong> Real-time two-way synchronization with existing inventory management systems and ERP software.</li>
+                            </ul>
+                        </div>
+
+                        <!-- Sub-Section 2: Business Websites -->
+                        <div id="web-dev-2" class="pt-6 border-t border-gray-100">
+                            <h3 class="font-bold text-2xl text-blue-700 mb-3 flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mr-2 highlight-text" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+                                Lead-Generation Business Sites: The Sales Funnel Architect
+                            </h3>
+                            <p class="text-gray-700 mb-4">
+                                Professional, high-impact sites engineered to establish thought leadership, guide prospects through a lead funnel, and integrate directly into your CRM system.
+                            </p>
+                            <ul class="space-y-2 pl-5 list-disc text-gray-600 bg-amber-50 p-4 rounded-lg">
+                                <li><strong class="text-gray-900">Custom CMS Development:</strong> Building a flexible content management experience that grows with your business needs.</li>
+                                <li><strong class="text-gray-900">SEO-First Engineering:</strong> Technical SEO from the ground up, including optimized site speed, structured data, and mobile performance.</li>
+                                <li><strong class="text-gray-900">Advanced Form Logic:</strong> Sophisticated multi-step forms and progressive profiling to qualify leads before they ever reach your sales team.</li>
+                            </ul>
+                        </div>
+
+                        <!-- Sub-Section 3: Portfolio & Showcase -->
+                        <div id="web-dev-3" class="pt-6 border-t border-gray-100">
+                            <h3 class="font-bold text-2xl text-blue-700 mb-3 flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mr-2 highlight-text" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+                                Portfolio & Digital Resume: Asset Loading Speed
+                            </h3>
+                            <p class="text-gray-700 mb-4">
+                                For creatives and agencies, your work is your selling point. We build platforms that prioritize visual impact and lightning-fast asset delivery to impress clients instantly.
+                            </p>
+                            <ul class="space-y-2 pl-5 list-disc text-gray-600 bg-amber-50 p-4 rounded-lg">
+                                <li><strong class="text-gray-900">Dynamic Filtering & Sorting:</strong> Advanced functionality for users to quickly navigate large bodies of work and filter by category or media type.</li>
+                                <li><strong class="text-gray-900">Optimized Media Delivery:</strong> Implementing CDN and next-gen image formats (WebP) to ensure high-resolution assets load without delay.</li>
+                            </ul>
+                        </div>
+
+                         <!-- Sub-Section 4: Microsites & Campaigns -->
+                        <div id="web-dev-4" class="pt-6 border-t border-gray-100">
+                            <h3 class="font-bold text-2xl text-blue-700 mb-3 flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mr-2 highlight-text" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+                                Microsites & Campaigns: Zero-Distraction Funnels
+                            </h3>
+                            <p class="text-gray-700 mb-4">
+                                Single-purpose sites designed for maximum marketing effectiveness, offering deep analytics integration and fast deployment for time-sensitive launches.
+                            </p>
+                            <ul class="space-y-2 pl-5 list-disc text-gray-600 bg-amber-50 p-4 rounded-lg">
+                                <li><strong class="text-gray-900">A/B Testing Integration:</strong> Ready-to-go environment for testing headlines, CTAs, and layout variations to maximize conversion rates.</li>
+                                <li><strong class="text-gray-900">GTM and Pixel Setup:</strong> Comprehensive Google Tag Manager and marketing pixel implementation for granular tracking and retargeting campaigns.</li>
+                            </ul>
+                        </div>
+
+                        <div class="mt-10 text-center">
+                            <a href="#contact" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-full transition duration-300">View Development Case Studies</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 2. UI/UX & Branding Content - Expanded with Sticky Sub-Nav -->
+            <section id="ui-ux-branding" class="service-content-section card p-0 overflow-hidden">
+                <div class="flex flex-col lg:flex-row">
+                    <!-- Sticky Sub-Navigation (Left Column) -->
+                    <nav class="lg:w-1/4 bg-gray-50 p-6 space-y-2 sticky top-0 border-r border-gray-200">
+                        <h3 class="text-lg font-bold text-gray-800 mb-3">Design Pillars</h3>
+                        <a href="#ui-ux-1" class="sub-nav-item active-sub block" data-parent="ui-ux-branding">Discovery & Strategy</a>
+                        <a href="#ui-ux-2" class="sub-nav-item block" data-parent="ui-ux-branding">UI/UX & Prototyping</a>
+                        <a href="#ui-ux-3" class="sub-nav-item block" data-parent="ui-ux-branding">Visual Identity Audit</a>
+                        <a href="#ui-ux-4" class="sub-nav-item block" data-parent="ui-ux-branding">Full Brand Kit Delivery</a>
+                    </nav>
+
+                    <!-- Main Content Area (Right Column) -->
+                    <div class="lg:w-3/4 p-6 sm:p-10 space-y-12">
+                        <h2 class="text-3xl font-bold text-gray-800 border-b pb-2 highlight-text">Strategy-First Branding & Usability</h2>
+                        <p class="mb-8 text-lg text-gray-600">
+                            We don't just make things look good; we design experiences that solve user problems, ensuring every pixel and interaction guides the user toward conversion and loyalty.
+                        </p>
+                        
+                        <!-- Sub-Section 1: Discovery & Strategy -->
+                        <div id="ui-ux-1" class="pt-6 border-t border-gray-100">
+                            <h3 class="font-bold text-2xl text-blue-700 mb-3 flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mr-2 highlight-text" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/></svg>
+                                Discovery & Strategy: The Blueprint
+                            </h3>
+                            <p class="text-gray-700 mb-4">
+                                Every successful design starts with understanding the 'why'. We conduct thorough research to align our creative output with your business objectives and user needs.
+                            </p>
+                            <ul class="space-y-2 pl-5 list-disc text-gray-600 bg-amber-50 p-4 rounded-lg">
+                                <li><strong class="text-gray-900">User Interviews & Personas:</strong> Deep diving into target audience psychology to define realistic user journeys.</li>
+                                <li><strong class="text-gray-900">Competitive Analysis:</strong> Mapping out industry leaders and identifying design opportunities for differentiation.</li>
+                            </ul>
+                        </div>
+
+                        <!-- Sub-Section 2: UI/UX & Prototyping -->
+                        <div id="ui-ux-2" class="pt-6 border-t border-gray-100">
+                            <h3 class="font-bold text-2xl text-blue-700 mb-3 flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mr-2 highlight-text" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10s-2 1-3 1-3-1-3-1"/></svg>
+                                UI/UX & Prototyping: Testing Before Code
+                            </h3>
+                            <p class="text-gray-700 mb-4">
+                                Designing intuitive, beautiful interfaces that are rigorously tested for usability. We hand off developer-ready assets using modern tools (Figma, Sketch).
+                            </p>
+                            <ul class="space-y-2 pl-5 list-disc text-gray-600 bg-amber-50 p-4 rounded-lg">
+                                <li><strong class="text-gray-900">Wireframing & Information Architecture:</strong> Structuring content logically to minimize clicks and reduce cognitive load.</li>
+                                <li><strong class="text-gray-900">Interactive Prototyping:</strong> Creating high-fidelity, clickable prototypes for testing design flows before development begins.</li>
+                                <li><strong class="text-gray-900">Usability Testing:</strong> Conducting sessions to identify friction points and optimize user success rates.</li>
+                            </ul>
+                        </div>
+
+                        <!-- Sub-Section 3: Visual Identity Audit -->
+                        <div id="ui-ux-3" class="pt-6 border-t border-gray-100">
+                            <h3 class="font-bold text-2xl text-blue-700 mb-3 flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mr-2 highlight-text" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                                Visual Identity Audit & Redesign
+                            </h3>
+                            <p class="text-gray-700 mb-4">
+                                Modernizing legacy interfaces to align with current design standards (Material, Fluent) and ensuring compliance with web accessibility guidelines (WCAG).
+                            </p>
+                            <ul class="space-y-2 pl-5 list-disc text-gray-600 bg-amber-50 p-4 rounded-lg">
+                                <li><strong class="text-gray-900">WCAG Accessibility Review:</strong> Ensuring optimal contrast, screen-reader compatibility, and keyboard navigation.</li>
+                                <li><strong class="text-gray-900">Logo Refresh/Creation:</strong> Conceptual design, iteration, and delivery of final vector assets for all platforms.</li>
+                            </ul>
+                        </div>
+                        
+                        <!-- Sub-Section 4: Full Brand Kit Delivery -->
+                        <div id="ui-ux-4" class="pt-6 border-t border-gray-100">
+                            <h3 class="font-bold text-2xl text-blue-700 mb-3 flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mr-2 highlight-text" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12.83 2.189 7.91 3.597A2 2 0 0 1 21 7.426v9.148a2 2 0 0 1-1.26 1.874l-7.91 3.597a2 2 0 0 1-1.42 0l-7.91-3.597A2 2 0 0 1 3 16.574V7.426a2 2 0 0 1 1.26-1.874l7.91-3.597a2 2 0 0 1 1.42 0z"/><path d="m3 7 9 4.5 9-4.5"/><path d="M12 21V11.5"/></svg>
+                                Full Brand Kit Delivery: Consistency
+                            </h3>
+                            <p class="text-gray-700 mb-4">
+                                A single source of truth for your brand, ensuring every marketing material, digital product, and internal document is consistent.
+                            </p>
+                            <ul class="space-y-2 pl-5 list-disc text-gray-600 bg-amber-50 p-4 rounded-lg">
+                                <li><strong class="text-gray-900">Style Guidelines Document:</strong> Detailed rules for color palettes, typography hierarchy, logo usage, and imagery guidelines.</li>
+                                <li><strong class="text-gray-900">Asset Library:</strong> Delivery of scalable vector graphics (SVG) and high-resolution assets for immediate deployment.</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="mt-10 text-center">
+                            <a href="#contact" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-full transition duration-300">Explore Design Portfolio</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- 3. Automation & Integrations Content - Expanded with Sticky Sub-Nav -->
+            <section id="automation" class="service-content-section card p-0 overflow-hidden">
+                <div class="flex flex-col lg:flex-row">
+                    <!-- Sticky Sub-Navigation (Left Column) -->
+                    <nav class="lg:w-1/4 bg-gray-50 p-6 space-y-2 sticky top-0 border-r border-gray-200">
+                        <h3 class="text-lg font-bold text-gray-800 mb-3">Integration Modules</h3>
+                        <a href="#auto-1" class="sub-nav-item active-sub block" data-parent="automation">CRM & Data Sync</a>
+                        <a href="#auto-2" class="sub-nav-item block" data-parent="automation">Payment Gateways</a>
+                        <a href="#auto-3" class="sub-nav-item block" data-parent="automation">Email Automation</a>
+                        <a href="#auto-4" class="sub-nav-item block" data-parent="automation">AI Chatbots & BI</a>
+                    </nav>
+
+                    <!-- Main Content Area (Right Column) -->
+                    <div class="lg:w-3/4 p-6 sm:p-10 space-y-12">
+                        <h2 class="text-3xl font-bold text-gray-800 border-b pb-2 highlight-text">Scaling Efficiency, Maximizing ROI</h2>
+                        <p class="mb-8 text-lg text-gray-600">
+                            We deploy intelligent systems and seamless integrations to drive operational efficiency and free up your team for high-value tasks.
+                        </p>
+
+                        <!-- Sub-Section 1: CRM & Data Sync -->
+                        <div id="auto-1" class="pt-6 border-t border-gray-100">
+                            <h3 class="font-bold text-2xl text-blue-700 mb-3 flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mr-2 highlight-text" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                                CRM & Data Sync: Single Source of Truth
+                            </h3>
+                            <p class="text-gray-700 mb-4">
+                                Automate lead scoring, sales pipelines, and customer follow-ups by connecting your website to major CRM platforms (Salesforce, HubSpot, custom).
+                            </p>
+                            <ul class="space-y-2 pl-5 list-disc text-gray-600 bg-amber-50 p-4 rounded-lg">
+                                <li><strong class="text-gray-900">Two-Way Sync:</strong> Ensuring data consistency between your website, CRM, and internal databases in real-time.</li>
+                                <li><strong class="text-gray-900">Data Cleansing & Validation:</strong> Implementing rules to ensure clean, actionable data enters your CRM system.</li>
+                            </ul>
+                        </div>
+
+                        <!-- Sub-Section 2: Payment Gateways -->
+                        <div id="auto-2" class="pt-6 border-t border-gray-100">
+                            <h3 class="font-bold text-2xl text-blue-700 mb-3 flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mr-2 highlight-text" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></svg>
+                                Payment Gateways: Secure Tokenized Payments
+                            </h3>
+                            <p class="text-gray-700 mb-4">
+                                Seamless and compliant integration of payment processors, supporting diverse business models from one-time purchases to complex recurring subscriptions.
+                            </p>
+                            <ul class="space-y-2 pl-5 list-disc text-gray-600 bg-amber-50 p-4 rounded-lg">
+                                <li><strong class="text-gray-900">Subscription & Recurring Billing:</strong> Automated systems for managing customer subscriptions, renewals, and dunning processes.</li>
+                                <li><strong class="text-gray-900">Localized Gateway Setup:</strong> Configuring regional payment methods and multi-currency support for global reach.</li>
+                            </ul>
+                        </div>
+
+                        <!-- Sub-Section 3: Email Automation -->
+                        <div id="auto-3" class="pt-6 border-t border-gray-100">
+                            <h3 class="font-bold text-2xl text-blue-700 mb-3 flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mr-2 highlight-text" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                                Email Automation: Personalized Customer Journeys
+                            </h3>
+                            <p class="text-gray-700 mb-4">
+                                Setting up advanced behavioral email marketing workflows (Klaviyo, Mailchimp, custom ESP) to nurture leads and recover abandoned revenue.
+                            </p>
+                            <ul class="space-y-2 pl-5 list-disc text-gray-600 bg-amber-50 p-4 rounded-lg">
+                                <li><strong class="text-gray-900">Behavioral Segmentation:</strong> Creating dynamic lists based on site activity, purchase history, and engagement metrics.</li>
+                                <li><strong class="text-gray-900">Deliverability Audits:</strong> Technical optimization of sending infrastructure to maximize inbox placement and minimize spam flags.</li>
+                            </ul>
+                        </div>
+                        
+                        <!-- Sub-Section 4: AI Chatbots & BI -->
+                        <div id="auto-4" class="pt-6 border-t border-gray-100">
+                            <h3 class="font-bold text-2xl text-blue-700 mb-3 flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mr-2 highlight-text" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><path d="M3 10h18"/><path d="M10 3v18"/></svg>
+                                AI Chatbots & BI: Intelligent Decision Making
+                            </h3>
+                            <p class="text-gray-700 mb-4">
+                                Integrating large language models (LLMs) for conversational support and building custom dashboards for predictive analytics and real-time reporting.
+                            </p>
+                            <ul class="space-y-2 pl-5 list-disc text-gray-600 bg-amber-50 p-4 rounded-lg">
+                                <li><strong class="text-gray-900">Context-Aware AI Chatbots:</strong> Custom-trained bots that handle tier-1 support, lead qualification, and knowledge base lookups instantly.</li>
+                                <li><strong class="text-gray-900">Custom BI Dashboards:</strong> Building unique reporting layers to merge data from Google Analytics, CRM, and payment systems into one clear view.</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="mt-10 text-center">
+                            <a href="#contact" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-full transition duration-300">Request Automation Audit</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- 4. Maintenance & Support Content - Expanded with Sticky Sub-Nav (focused on Tiers) -->
+            <section id="maintenance" class="service-content-section card p-0 overflow-hidden">
+                <div class="flex flex-col lg:flex-row">
+                    <!-- Sticky Sub-Navigation (Left Column) -->
+                    <nav class="lg:w-1/4 bg-gray-50 p-6 space-y-2 sticky top-0 border-r border-gray-200">
+                        <h3 class="text-lg font-bold text-gray-800 mb-3">Support Packages</h3>
+                        <a href="#maint-1" class="sub-nav-item active-sub block" data-parent="maintenance">Core Care Plans</a>
+                        <a href="#maint-2" class="sub-nav-item block" data-parent="maintenance">Security & Patches</a>
+                        <a href="#maint-3" class="sub-nav-item block" data-parent="maintenance">Bug Fixes & Incident</a>
+                        <a href="#maint-4" class="sub-nav-item block" data-parent="maintenance">Performance Optimization</a>
+                    </nav>
+
+                    <!-- Main Content Area (Right Column) -->
+                    <div class="lg:w-3/4 p-6 sm:p-10 space-y-12">
+                        <h2 class="text-3xl font-bold text-gray-800 border-b pb-2 highlight-text">Proactive Security & Guaranteed Uptime</h2>
+                        <p class="mb-8 text-lg text-gray-600">
+                            Our support is proactive, not just reactive. We guarantee peak performance and security, ensuring your digital asset is always an advantage, never a liability.
+                        </p>
+                        
+                        <!-- Sub-Section 1: Core Care Plans (Pricing Tier Concept) -->
+                        <div id="maint-1" class="pt-6 border-t border-gray-100">
+                            <h3 class="font-bold text-2xl text-blue-700 mb-3 flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mr-2 highlight-text" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15.5v2c0 .28.22.5.5.5h15c.28 0 .5-.22.5-.5v-2"/><path d="M12 11V4"/><path d="M15 7l-3-3-3 3"/></svg>
+                                Core Care Plans: Subscription Tiers
+                            </h3>
+                            <p class="text-gray-700 mb-4">
+                                Choose from tiered packages designed to match your operational needs, from basic monitoring to comprehensive 24/7 technical management.
+                            </p>
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
+                                <div class="p-4 bg-white rounded-xl border-2 border-blue-500 shadow-lg">
+                                    <h4 class="font-bold text-lg text-blue-700">Essentials</h4>
+                                    <p class="text-3xl font-extrabold my-2 highlight-text">$99/mo</p>
+                                    <p class="text-xs text-gray-600">Monthly Backup, Security Audits</p>
+                                </div>
+                                <div class="p-4 bg-white rounded-xl border-2 border-blue-500 shadow-lg">
+                                    <h4 class="font-bold text-lg text-blue-700">Premium</h4>
+                                    <p class="text-3xl font-extrabold my-2 highlight-text">$249/mo</p>
+                                    <p class="text-xs text-gray-600">Weekly Backups, 4hr Response, Uptime Monitoring</p>
+                                </div>
+                                <div class="p-4 bg-white rounded-xl border-2 border-blue-500 shadow-lg">
+                                    <h4 class="font-bold text-lg text-blue-700">Enterprise</h4>
+                                    <p class="text-3xl font-extrabold my-2 highlight-text">Custom</p>
+                                    <p class="text-xs text-gray-600">24/7 Monitoring, Dedicated Engineer, 1hr Response</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Sub-Section 2: Security & Patches -->
+                        <div id="maint-2" class="pt-6 border-t border-gray-100">
+                            <h3 class="font-bold text-2xl text-blue-700 mb-3 flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mr-2 highlight-text" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/></svg>
+                                Zero-Day Security & Patches
+                            </h3>
+                            <p class="text-gray-700 mb-4">
+                                Continuous vulnerability scanning and prompt application of security patches across core, theme, and plugin layers to defend against emerging threats.
+                            </p>
+                            <ul class="space-y-2 pl-5 list-disc text-gray-600 bg-amber-50 p-4 rounded-lg">
+                                <li><strong class="text-gray-900">Daily Security Audits:</strong> Automated checks for known vulnerabilities and unauthorized file changes.</li>
+                                <li><strong class="text-gray-900">WAF Configuration:</strong> Firewall setup and fine-tuning to filter malicious traffic and prevent DDoS attacks.</li>
+                            </ul>
+                        </div>
+
+                        <!-- Sub-Section 3: Bug Fixes & Incident -->
+                        <div id="maint-3" class="pt-6 border-t border-gray-100">
+                            <h3 class="font-bold text-2xl text-blue-700 mb-3 flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mr-2 highlight-text" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                                Bug Fixes & Rapid Incident Response
+                            </h3>
+                            <p class="text-gray-700 mb-4">
+                                Guaranteed response times for critical bugs, backed by forensic debugging and root cause analysis to prevent recurrence.
+                            </p>
+                            <ul class="space-y-2 pl-5 list-disc text-gray-600 p-4 rounded-lg bg-amber-50">
+                                <li><strong class="text-gray-900">Guaranteed SLAS:</strong> Tiered service level agreements (SLAs) with response guarantees as low as 1-hour for critical issues.</li>
+                                <li><strong class="text-gray-900">Forensic Debugging:</strong> Deep log analysis and code inspection to find and fix issues that external diagnostics miss.</li>
+                            </ul>
+                        </div>
+                        
+                        <!-- Sub-Section 4: Performance Optimization -->
+                        <div id="maint-4" class="pt-6 border-t border-gray-100">
+                            <h3 class="font-bold text-2xl text-blue-700 mb-3 flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mr-2 highlight-text" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.5 8.5v5c0 .38.22.68.5.83l.83.42c.28.14.47.38.6.66.13.28.2.6.2.94v.83"/><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                                Performance Optimization: Speed Grading
+                            </h3>
+                            <p class="text-gray-700 mb-4">
+                                Continuous fine-tuning to maintain high scores on Google PageSpeed Insights, ensuring sub-2 second load times globally.
+                            </p>
+                            <ul class="space-y-2 pl-5 list-disc text-gray-600 p-4 rounded-lg bg-amber-50">
+                                <li><strong class="text-gray-900">Caching & CDN Setup:</strong> Implementing multi-layered caching strategies (server-side and client-side) and content delivery networks.</li>
+                                <li><strong class="text-gray-900">Database Optimization:</strong> Cleaning, indexing, and optimizing database queries for faster server response times (TTFB).</li>
+                            </ul>
+                        </div>
+
+                        <div class="mt-10 text-center">
+                            <a href="#contact" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-full transition duration-300">View Support Tiers & Pricing</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+        
+        <!-- Footer / Contact Anchor -->
+        <footer id="contact" class="text-center mt-12 p-8 bg-gray-100 rounded-xl border border-gray-200">
+            <h3 class="text-2xl font-bold text-gray-800 mb-2">Ready to Transform Your Digital Presence?</h3>
+            <p class="text-gray-600 mb-4">Contact us today for a free consultation and project scope.</p>
+            <a href="mailto:info@techspire.com" class="cta-button inline-flex items-center text-white font-bold py-3 px-8 rounded-full text-lg shadow-lg">
+                Email Techspire
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 ml-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            </a>
+        </footer>
+
+    </div>
+
+    <!-- JavaScript for Tab Switching (UPDATED for Sub-Navigation) -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const tabsContainer = document.getElementById('service-tabs');
+            const contentSections = document.querySelectorAll('.service-content-section');
+            const allSubNavItems = document.querySelectorAll('.sub-nav-item');
+
+            // Function to switch the main tabs
+            function switchTab(targetId) {
+                // 1. Update Main Buttons
+                tabsContainer.querySelectorAll('.tab-button').forEach(button => {
+                    button.classList.remove('active');
+                });
+                const activeButton = tabsContainer.querySelector(`[data-target="${targetId}"]`);
+                if (activeButton) {
+                    activeButton.classList.add('active');
+                }
+
+                // 2. Update Content
+                contentSections.forEach(section => {
+                    section.style.display = 'none';
+                });
+                const targetSection = document.getElementById(targetId);
+                if (targetSection) {
+                    targetSection.style.display = 'block';
+                    
+                    // 3. Reset Sub-Navigation for the newly active tab
+                    const initialSubTarget = targetSection.querySelector('.sub-nav-item');
+                    if (initialSubTarget) {
+                        // Activate the first sub-nav item of the new section
+                        updateSubNav(initialSubTarget.getAttribute('href'));
+                    }
+                }
+            }
+
+            // Function to handle sub-navigation clicks and scrolling
+            function updateSubNav(hash) {
+                // Remove active-sub from all items in the current section
+                allSubNavItems.forEach(item => {
+                    item.classList.remove('active-sub');
+                });
+                
+                // Add active-sub to the clicked item
+                const targetItem = document.querySelector(`.sub-nav-item[href="${hash}"]`);
+                if (targetItem) {
+                    targetItem.classList.add('active-sub');
+                }
+                
+                // Smooth scroll to the content section
+                const targetElement = document.querySelector(hash);
+                if (targetElement) {
+                    // Scroll the main content area (lg:w-3/4)
+                    const scrollContainer = targetElement.closest('div.lg\\:w-3\\/4');
+                    if (scrollContainer) {
+                        scrollContainer.scrollTo({
+                            top: targetElement.offsetTop - 40, // Offset for visual padding
+                            behavior: 'smooth'
+                        });
+                    } else {
+                        // Fallback scroll if structure changes or for small screens
+                        targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                }
+            }
+
+
+            // Event listener for main tab clicks
+            tabsContainer.addEventListener('click', (event) => {
+                const button = event.target.closest('.tab-button');
+                if (button) {
+                    const targetId = button.getAttribute('data-target');
+                    if (targetId) {
+                        switchTab(targetId);
+                    }
+                }
+            });
+            
+            // Event listener for sub-navigation clicks
+            allSubNavItems.forEach(item => {
+                item.addEventListener('click', (event) => {
+                    event.preventDefault(); 
+                    const hash = item.getAttribute('href');
+                    updateSubNav(hash);
+                });
+            });
+
+            // Initialize the first tab (handled by CSS, but good practice to ensure)
+            switchTab('website-dev');
+        });
+    </script>
+
+</body>
+</html>

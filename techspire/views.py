@@ -9,3 +9,6 @@ def projectsho(request):
 
 def founders(request):
     return render (request,"founder.html")
+
+def services(request):
+    return render (request,"serv.html")

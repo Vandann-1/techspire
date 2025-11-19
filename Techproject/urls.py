@@ -22,6 +22,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',home ,name="home"),
     path('projectsho',projectsho,name="projectsho"),
-    path('founders/',founders,name="founders")
+    path('founders/',founders,name="founders"),
+    path('services/',services,name="services"),
     
 ]
