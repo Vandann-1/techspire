@@ -24,5 +24,6 @@ urlpatterns = [
     path('projectsho',projectsho,name="projectsho"),
     path('founders/',founders,name="founders"),
     path('services/',services,name="services"),
+    path('plans/',plans,name="plans")
     
 ]

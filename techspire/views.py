@@ -12,3 +12,6 @@ def founders(request):
 
 def services(request):
     return render (request,"serv.html")
+
+def plans(request):
+    return render (request,"plans.html")
